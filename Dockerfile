@@ -1,5 +1,5 @@
 FROM php:7.1.3-fpm
-RUN apt-get -y update && apt-get -y install libpng-dev zip unzip curl nano iputils-ping curl nginx less php-pear
+RUN apt-get -y update && apt-get -y install libpng-dev zip unzip curl nano iputils-ping curl nginx less php-pear elinks
 RUN export DEBIAN_FRONTEND=noninteractive
 
 RUN docker-php-ext-install gd
