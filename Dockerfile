@@ -3,7 +3,7 @@ RUN apt-get -y update && apt-get -y install libpng-dev zip unzip curl nano iputi
 
 RUN export DEBIAN_FRONTEND=noninteractive
 
-RUN docker-php-ext-install gd mysqli
+RUN docker-php-ext-install gd mysqli pdo_mysql
 RUN apt install -y tzdata
 RUN ln -fs /usr/share/zoneinfo/Europe/Istanbul /etc/localtime
 RUN dpkg-reconfigure --frontend noninteractive tzdata
