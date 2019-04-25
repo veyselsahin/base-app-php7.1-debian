@@ -6,7 +6,7 @@ RUN apt-get -o Acquire::Check-Valid-Until=false update && apt-get -y install lib
 RUN export DEBIAN_FRONTEND=noninteractive
 
 RUN docker-php-ext-install gd mysqli pdo_mysql mcrypt zip
-RUN docker-php-ext-enable gd mysqli pdo_mysql mcrypt zip
+RUN docker-php-ext-enable gd mysqli pdo_mysql mcrypt
 RUN apt install -y tzdata
 RUN ln -fs /usr/share/zoneinfo/Europe/Istanbul /etc/localtime
 RUN dpkg-reconfigure --frontend noninteractive tzdata
