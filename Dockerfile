@@ -5,8 +5,8 @@ RUN sed -i '/deb http:\/\/deb.debian.org\/debian jessie-updates main/d' /etc/apt
 RUN apt-get -o Acquire::Check-Valid-Until=false update && apt-get -y install libpng-dev zip unzip curl nano iputils-ping curl nginx less php-pear elinks software-properties-common apt-transport-https lsb-release ca-certificates wget libmcrypt-dev mcrypt git
 RUN export DEBIAN_FRONTEND=noninteractive
 
-RUN docker-php-ext-install gd mysqli pdo_mysql mcrypt zip
-RUN docker-php-ext-enable gd mysqli pdo_mysql mcrypt
+RUN docker-php-ext-install gd mysqli pdo_mysql mcrypt zip bcmath
+RUN docker-php-ext-enable gd mysqli pdo_mysql mcrypt bcmath
 RUN apt install -y tzdata
 RUN ln -fs /usr/share/zoneinfo/Europe/Istanbul /etc/localtime
 RUN dpkg-reconfigure --frontend noninteractive tzdata
